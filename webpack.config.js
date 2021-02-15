@@ -96,7 +96,7 @@ module.exports = (env) => {
         template: "./src/index.html"  // 없으면 webpack이 자체적으로 html을 생성한다.
         // filename: 'index.html' // for default
       }),
-      // new CleanWebpackPlugin(),  // cache를 사용하면 굳이 쓸 필요 없음.
+      new CleanWebpackPlugin(),  // cache를 사용하면 굳이 쓸 필요 없음.
       // new BundleAnalyzerPlugin(),
       new Dotenv(),
       new webpack.DefinePlugin({

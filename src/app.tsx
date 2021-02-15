@@ -8,8 +8,7 @@ import About from "./pages/about"
 
 const App = () => {
   return(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      {console.log(process.env.PUBLIC_URL)}
+    <BrowserRouter basename="/webpack-react-typescript">
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/about" exact component={About} />
