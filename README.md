@@ -76,3 +76,10 @@ babel config file을 다루는 데에는 다음과 같은 방법이 있습니다
 3.   package.json 
 
 예제에서는 1번 방법을 사용할 겁니다.
+
+##    typescript
+webpack에서 typescript 설정하는 방법에는 2가지가 있다.
+1.  babel 설정
+2.  webpack loader 설정
+
+어느 방식이든 큰 차이는 없다.
