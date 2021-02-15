@@ -1,17 +1,17 @@
 /** @jsx jsx */
+
 import { css, jsx } from '@emotion/react'
+import Image from "../public/test.png"
 
 const color = css`color: red;`
 
 const Home = () => {
   return (
-    <div>
-      This is home ddd
-      <div css={color }>
-        test
-      </div>
+    <div id="home">
     </div>
   )
 }
 
 export default Home
+
+import("../public/nebula")

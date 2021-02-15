@@ -4,15 +4,17 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const Dotenv = require('dotenv-webpack');
-const webpack = require('webpack')
+const webpack = require('webpack');
+const { isPropertyDeclaration } = require('typescript');
 
 //  object를 exports할 수도 있지만, 함수를 return하는 방법을 사용하면 cli 옵션을 인식할 수 있다.
 
 module.exports = (env) => {
-  console.log(env)
+  const isProduction = env.WEBPACK_BUILD ? true : false
+  console.log(isProduction)
 
   return {
-    mode: "production",
+    mode: isProduction ? "production" : "development",
     entry: {
       main: "./src/app.tsx"
     },

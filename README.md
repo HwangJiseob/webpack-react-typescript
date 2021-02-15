@@ -82,4 +82,10 @@ webpack에서 typescript 설정하는 방법에는 2가지가 있다.
 1.  babel 설정
 2.  webpack loader 설정
 
-어느 방식이든 큰 차이는 없다.
+어느 방식이든 큰 차이는 없습니다.
+
+
+##    optimizations
+###   reac-backend-devtools
+448kiB 정도를 차지하는 친구는 react script를 load하기 전에 막아주면 됩니다.
+자세한 코드는 index.html에 작성하였으니 참고 바랍니다.

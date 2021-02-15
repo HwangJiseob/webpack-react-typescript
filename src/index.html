@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf8">
     <title>Index html</title>
+    <script>
+      // react-backend-tools의 traffic 제거
+      if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object') {
+        __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function() {};
+      }
+    </script>
   </head>
   <body>
     <div id="app">
