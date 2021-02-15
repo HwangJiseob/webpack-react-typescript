@@ -11,7 +11,7 @@
     "dev": "webpack serve --mode=development --hot",
     "serve": "serve -s dist"
   },
-  "homepage": "https://hwangjiseob.github.io/javascript-webpack-example/",
+  "homepage": "https://hwangjiseob.github.io/webpack-react-typescript/",
   "keywords": [],
   "author": "Hwang Jiseob",
   "license": "ISC",
@@ -23,11 +23,15 @@
     "@babel/preset-typescript": "latest",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router-dom": "latest",
     "babel-loader": "latest",
     "clean-webpack-plugin": "latest",
     "css-loader": "latest",
+    "dotenv-webpack": "^6.0.0",
     "file-loader": "latest",
-    "gh-pages": "latest",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "latest",
     "path": "latest",
     "react": "latest",
@@ -40,9 +44,6 @@
     "webpack": "^5.22.0",
     "webpack-bundle-analyzer": "latest",
     "webpack-cli": "latest",
-    "webpack-dev-server": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "@types/react-router-dom": "latest"
+    "webpack-dev-server": "latest"
   }
 }

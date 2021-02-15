@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack')
 
 //  object를 exports할 수도 있지만, 함수를 return하는 방법을 사용하면 cli 옵션을 인식할 수 있다.
 
@@ -53,25 +55,25 @@ module.exports = (env) => {
     devtool: 'inline-source-map',
     module: {
       rules: [
-        {
-          // https://webpack.js.org/guides/typescript/
-          test: /\.tsx?$/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
-        },
         // {
-        //   // babel
-        //   test: /\.(js|jsx|ts|tsx)$/,
-        //   exclude: "/node_modules",
-        //   use: [{
-        //     loader: 'babel-loader',
-        //     options: {
-        //       // build time 단축을 위한 cacheing
-        //       cacheDirectory: true,
-        //       cacheCompression: false,
-        //     }
-        //   }]
+        //   // https://webpack.js.org/guides/typescript/
+        //   test: /\.tsx?$/,
+        //   use: 'ts-loader',
+        //   exclude: /node_modules/,
         // },
+        {
+          // babel
+          test: /\.(js|jsx|ts|tsx)$/,
+          exclude: "/node_modules",
+          use: [{
+            loader: 'babel-loader',
+            options: {
+              // build time 단축을 위한 cacheing
+              cacheDirectory: true,
+              cacheCompression: false,
+            }
+          }]
+        },
         {
           // https://webpack.js.org/loaders/css-loader/
           test: /\.css$/i,
@@ -95,7 +97,11 @@ module.exports = (env) => {
         // filename: 'index.html' // for default
       }),
       // new CleanWebpackPlugin(),  // cache를 사용하면 굳이 쓸 필요 없음.
-      // new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin(),
+      new Dotenv(),
+      new webpack.DefinePlugin({
+        "process.env.PUBLIC_URL": JSON.stringify(process.env.PUBLIC_URL)
+      })
     ]
   }
 }
